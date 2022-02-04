@@ -99,6 +99,7 @@ function App() {
                         <option>Canada</option>
                         <option>Mexico</option>
                       </select>
+                      <ErrorMessage className="text-blue-600" name="cuidad"></ErrorMessage>
                     </div>
 
                     <div className="col-span-6">

@@ -10,6 +10,10 @@ function App() {
     telefonos:['']
 
   }
+
+  const onSubmit = (values) =>{
+      console.log(values)
+  }
   return (
     <div className="App bg-slate-200" >
       <div className="hidden sm:block" aria-hidden="true">
@@ -27,7 +31,7 @@ function App() {
             </div>
           </div>
           <div className="mt-5 md:mt-0 md:col-span-2 ">
-            <Formik initialValues={initialValues} >
+            <Formik initialValues={initialValues} onSubmit={onSubmit} >
             <Form>
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">

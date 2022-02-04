@@ -3,7 +3,7 @@ import { Formik,Form,Field } from 'formik'
 import Yup from 'yup'
 
 function App() {
-  
+
   const initialValues = {
     nombre:'',
     apellido:'',
@@ -13,7 +13,9 @@ function App() {
 
   }
 
-  
+  const validationSchema = Yup.object({
+    
+  })
 
   const onSubmit = (values) =>{
       console.log(values)

@@ -2,6 +2,12 @@ import './App.css';
 import { Formik } from 'formik'
 
 function App() {
+  const initialValues = {
+    nombre:'',
+    apellido:'',
+    correo:'',
+    cuidad:''
+  }
   return (
     <div className="App bg-slate-200" >
       <div className="hidden sm:block" aria-hidden="true">

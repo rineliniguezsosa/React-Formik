@@ -11,6 +11,8 @@ function App() {
 
   }
 
+  
+
   const onSubmit = (values) =>{
       console.log(values)
   }
@@ -31,7 +33,8 @@ function App() {
             </div>
           </div>
           <div className="mt-5 md:mt-0 md:col-span-2 ">
-            <Formik initialValues={initialValues} onSubmit={onSubmit} >
+            <Formik 
+            initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema} >
             <Form>
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">

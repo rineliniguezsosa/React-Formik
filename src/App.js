@@ -116,6 +116,7 @@ function App() {
                               <div className="w-full border-black flex flex-row" key={index}>
                               <Field  className="mt-1 block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name={`telefonos.${index}`}>
                               </Field>
+                              <ErrorMessage className="text-blue-600" name="telefonos"></ErrorMessage>
                               <button className="mt-1 block py-2 px-3 bg-red-600 w-16 rounded-md" onClick={()=> arrayHelpers.remove(index)}>-</button>
                               <button className="mt-1 block py-2 px-3 bg-blue-400 w-16 rounded-md" onClick={()=> arrayHelpers.insert(index)}>+</button>
                               </div>

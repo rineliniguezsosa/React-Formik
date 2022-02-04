@@ -14,7 +14,7 @@ function App() {
   }
 
   const validationSchema = Yup.object({
-    nombre:Yup.string().matches(/[a-z]/,'No es un formato adecuado,solo minusculas').required()
+    nombre:Yup.string().matches(/[a-z]/,'No es un formato adecuado,solo minusculas').required('Requerido')
   })
 
   const onSubmit = (values) =>{

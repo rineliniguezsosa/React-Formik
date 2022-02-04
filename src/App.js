@@ -16,7 +16,8 @@ function App() {
   const validationSchema = Yup.object({
     nombre:Yup.string().matches(/[a-z]/,'No es un formato adecuado,solo minusculas').required('Requerido'),
     apellido:Yup.string().matches(/[a-z]/,'No es un formato adecuado,solo minusculas').required('Requerido'),
-    correo:Yup.string().email('Establece tu email en un formato valido').required('Requerido')
+    correo:Yup.string().email('Establece tu email en un formato valido').required('Requerido'),
+    cuidad:Yup.string().required('Requerido')
   })
 
   const onSubmit = (values) =>{
@@ -69,6 +70,7 @@ function App() {
                         id="apellido"
                         className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
+                      <ErrorMessage className="text-blue-600" name="apellido"></ErrorMessage>
                     </div>
 
                     <div className="col-span-6 sm:col-span-4">

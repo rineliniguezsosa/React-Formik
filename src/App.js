@@ -36,9 +36,8 @@ function App() {
                       </label>
                       <input
                         type="text"
-                        name="first-name"
-                        id="first-name"
-                        autoComplete="given-name"
+                        name="nombre"
+                        id="nombre"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>

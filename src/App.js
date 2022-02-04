@@ -105,32 +105,27 @@ function App() {
                     </div>
 
                     <div className="col-span-6">
+                      <label htmlFor="Telefonos" className="block text-sm font-medium text-gray-700">
+                        Numero Telefonico
+                      </label>
                       <FieldArray name="telefonos" render={arrayHelpers =>(
                         <div>
                           {values.telefonos && values.telefonos.length > 0
                           ? (values.telefonos.map((telefono,index)=>(
-                              <div key={index}>
-                              <Field name={`telefonos.${index}`}></Field>
-                              <button onClick={()=> arrayHelpers.remove(index)}>-</button>
-                              <button onClick={()=> arrayHelpers.insert(index)}>+</button>
+                              <div className="w-full border-black flex flex-row" key={index}>
+                              <Field  className="mt-1 block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name={`telefonos.${index}`}>
+                              </Field>
+                              <button className="mt-1 block py-2 px-3 bg-red-600 w-16 rounded-md" onClick={()=> arrayHelpers.remove(index)}>-</button>
+                              <button className="mt-1 block py-2 px-3 bg-blue-400 w-16 rounded-md" onClick={()=> arrayHelpers.insert(index)}>+</button>
                               </div>
                           )))
                           :
-                          <button onClick={()=> arrayHelpers.push('')}>+</button>
+                          <button className="mt-1 block py-2 px-3 bg-blue-400 w-16 rounded-md" 
+                          onClick={()=> arrayHelpers.push('')}>+</button>
                           }
                         </div>
                       )}>
-
                       </FieldArray>
-                      <label htmlFor="Telefonos" className="block text-sm font-medium text-gray-700">
-                        Numero Telefonico
-                      </label>
-                      <input
-                        type="text"
-                        name="telefonos"
-                        id="telefonos"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
                     </div>
 
                     

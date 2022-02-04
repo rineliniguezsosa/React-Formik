@@ -18,7 +18,7 @@ function App() {
     apellido:Yup.string().matches(/[a-z]/,'No es un formato adecuado,solo minusculas').required('Requerido'),
     correo:Yup.string().email('Establece tu email en un formato valido').required('Requerido'),
     cuidad:Yup.string().required('Requerido'),
-    telefonos:Yup.string().phone()
+    telefonos:Yup.string().min(10,'Solo 10 digitos').not().matches([/^[0-9]{10}$/,'chale']).required('Requerido')
   })
 
   const onSubmit = (values) =>{

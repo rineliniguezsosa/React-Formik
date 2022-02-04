@@ -38,8 +38,9 @@ function App() {
           </div>
           <div className="mt-5 md:mt-0 md:col-span-2 ">
             <Formik 
-            initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema} >
-            <Form validateOnChange={false} validateOnBlur={false} >
+            initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}
+            validateOnChange={false} validateOnBlur={false} >
+            <Form >
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">

@@ -105,6 +105,23 @@ function App() {
                     </div>
 
                     <div className="col-span-6">
+                      <FieldArray name="telefonos" render={arrayHelpers =>(
+                        <div>
+                          {values.telefonos && values.telefonos.length > 0
+                          ? (values.telefonos.map((telefono,index)=>(
+                              <div key={index}>
+                              <Field name={`telefonos.${index}`}></Field>
+                              <button onClick={()=> arrayHelpers.remove(index)}>-</button>
+                              <button onClick={()=> arrayHelpers.insert(index)}>+</button>
+                              </div>
+                          )))
+                          :
+                          <button onClick={()=> arrayHelpers.push('')}>+</button>
+                          }
+                        </div>
+                      )}>
+
+                      </FieldArray>
                       <label htmlFor="Telefonos" className="block text-sm font-medium text-gray-700">
                         Numero Telefonico
                       </label>

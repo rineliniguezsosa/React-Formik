@@ -14,7 +14,7 @@ function App() {
   }
 
   const validationSchema = Yup.object({
-    
+    nombre:Yup.string().required('Requerido')
   })
 
   const onSubmit = (values) =>{

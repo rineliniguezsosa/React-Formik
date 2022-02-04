@@ -28,7 +28,7 @@ function App() {
           </div>
           <div className="mt-5 md:mt-0 md:col-span-2 ">
             <Formik initialValues={initialValues} >
-            <form action="#" method="POST">
+            <Form>
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
@@ -36,7 +36,7 @@ function App() {
                       <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
                         Nombre
                       </label>
-                      <input
+                      <Field
                         type="text"
                         name="nombre"
                         id="nombre"
@@ -48,7 +48,7 @@ function App() {
                       <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
                         Apellido
                       </label>
-                      <input
+                      <Field
                         type="text"
                         name="apellido"
                         id="apellido"
@@ -60,7 +60,7 @@ function App() {
                       <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
                         Correo Electronico
                       </label>
-                      <input
+                      <Field
                         type="text"
                         name="correo"
                         id="correo"
@@ -120,7 +120,7 @@ function App() {
                   </button>
                 </div>
               </div>
-            </form>
+            </Form>
             </Formik>
           </div>
         </div>

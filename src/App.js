@@ -1,7 +1,9 @@
 import './App.css';
 import { Formik,Form,Field } from 'formik'
+import Yup from 'yup'
 
 function App() {
+  
   const initialValues = {
     nombre:'',
     apellido:'',

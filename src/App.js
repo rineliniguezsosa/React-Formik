@@ -19,11 +19,12 @@ function App() {
     apellido:Yup.string().matches(/[a-z]/,'No es un formato adecuado,solo minusculas').required('Requerido'),
     correo:Yup.string().email('Establece tu email en un formato valido').required('Requerido'),
     cuidad:Yup.string().required('Requerido'),
-    telefonos:Yup.string()
+    
   })
 
   const onSubmit = (values) =>{
       alert(JSON.stringify(values));
+      console.log(values)
   }
   return (
     <div className="App bg-slate-200" >

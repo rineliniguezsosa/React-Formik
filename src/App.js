@@ -23,7 +23,7 @@ function App() {
   })
 
   const onSubmit = (values) =>{
-      console.log(values)
+      alert(JSON.stringify(values));
   }
   return (
     <div className="App bg-slate-200" >

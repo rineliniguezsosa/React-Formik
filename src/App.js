@@ -22,9 +22,10 @@ function App() {
     
   })
 
-  const onSubmit = (values) =>{
+  const onSubmit = (values,actions) =>{
       alert(JSON.stringify(values));
-      console.log(values)
+      actions.setSubmitting(false)
+      actions.resetForm()
   }
   return (
     <div className="App bg-slate-200" >

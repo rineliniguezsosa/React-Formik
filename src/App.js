@@ -10,7 +10,7 @@ function App() {
     apellido:'',
     correo:'',
     cuidad:'',
-    telefonos:['']
+    telefonos:[{telefono:''}]
 
   }
 
@@ -19,6 +19,9 @@ function App() {
     apellido:Yup.string().matches(/[a-z]/,'No es un formato adecuado,solo minusculas').required('Requerido'),
     correo:Yup.string().email('Establece tu email en un formato valido').required('Requerido'),
     cuidad:Yup.string().required('Requerido'),
+    telefonos:Yup.array().of(Yup.object().shape({
+      telefono:Yup.string().required('Requerido')
+    }))
     
   })
 
@@ -26,6 +29,7 @@ function App() {
       alert(JSON.stringify(values));
       actions.setSubmitting(false)
       actions.resetForm()
+      
   }
   return (
     <div className="App bg-slate-200" >
@@ -117,38 +121,30 @@ function App() {
                           {values.telefonos && values.telefonos.length > 0
                           ? (values.telefonos.map((telefono,index)=>(
                               <div className="w-full border-black flex flex-row" key={index}>
-                              <Field  className="mt-1 block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name={`telefonos.${index}`}>
+                              <Field  className="mt-1 block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name={`telefonos.${index}.telefono`}>
                               </Field>
-                              {}
                               <button className="mt-1 block py-2 px-3 bg-red-600 w-16 rounded-md" onClick={()=> arrayHelpers.remove(index)}>-</button>
                               <button className="mt-1 block py-2 px-3 bg-blue-400 w-16 rounded-md" onClick={()=> arrayHelpers.insert(index,'')}>+</button>
+                              <br></br>
+                              <ErrorMessage className="text-blue-600" name={`telefonos.${index}.telefono`} >
+                              </ErrorMessage>
+                              <br></br>
+                              
                               </div>
+                              
                           )))
                           :
                           <button className="mt-1 block py-2 px-3 bg-blue-400 w-16 rounded-md" 
                           onClick={()=> arrayHelpers.push('')}>+</button>
                           }
+                           
                         </div>
                         
                       )}>
                       </FieldArray>
-                      <ErrorMessage className="text-blue-600" name="telefonos"></ErrorMessage>
+                      
                     </div>
 
-                    
-
-                    <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                      <label htmlFor="region" className="block text-sm font-medium text-gray-700">
-                        State / Province
-                      </label>
-                      <input
-                        type="text"
-                        name="region"
-                        id="region"
-                        autoComplete="address-level1"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div>
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
